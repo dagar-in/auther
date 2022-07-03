@@ -3,6 +3,8 @@ import { ContentType, HeaderItem } from "./types/fastify-utils";
 import GithubRouter from "./controller/github";
 import GoogleRouter from "./controller/google";
 import DiscordRouter from "./controller/discord";
+import TwitterRouter from "./controller/twitter";
+import FacebookRouter from "./controller/facebook";
 import AuthRouter from "./controller/auth";
 import { setupDB } from "./service/database";
 import { setupRedis } from "./service/redis";
@@ -17,6 +19,8 @@ fastify.register(AuthRouter);
 fastify.register(GithubRouter, { prefix: "/github" });
 fastify.register(GoogleRouter, { prefix: "/google" });
 fastify.register(DiscordRouter, { prefix: "/discord" });
+fastify.register(TwitterRouter, { prefix: "/twitter" });
+fastify.register(FacebookRouter, { prefix: "/facebook" });
 
 /* Healthcheck */
 fastify.get("/", async (_request, reply) => {
