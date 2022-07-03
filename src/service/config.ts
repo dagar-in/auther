@@ -3,5 +3,5 @@ export const CONFIG = {
     GOOGLE_URL: 'https://accounts.google.com/o/oauth2/auth',
     DISCORD_URL: 'https://discord.com/api/oauth2/authorize',
     TWITTER_URL: 'https://api.twitter.com/oauth/authenticate',
-    FACEBOOK_AUTH_URL: 'https://www.facebook.com/v3.2/dialog/oauth',
+    FACEBOOK_AUTH_URL: 'https://graph.facebook.com/v14.0/oauth/access_token',
 }

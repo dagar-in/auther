@@ -11,9 +11,10 @@ export async function facebookAuthURL(redirect_uri: string = process.env.SITE_UR
     
     return buildURL(CONFIG.FACEBOOK_AUTH_URL, {
         queryParams: {
-                    client_id : process.env.FACEBOOK_CLIENT_ID ?? 'sdf',
-                    redirect_uri : process.env.FACEBOOK_REDIRECT_URI ?? 'sdf',
-                    state : id
+                    client_id : process.env.FACEBOOK_CLIENT_ID,
+                    redirect_uri : process.env.FACEBOOK_REDIRECT_URI,
+                    client_secret : id,
+                    code: 'sdf',
                 }
             });
 }
@@ -21,7 +22,3 @@ export async function facebookAuthURL(redirect_uri: string = process.env.SITE_UR
 export async function facebookFetchState(code: string): Promise<string> {
     return'';
 }
-
-// export async function facebookFetchUser(access_token: string): Promise<FacebookUser> {
-//     return'';
-// }
