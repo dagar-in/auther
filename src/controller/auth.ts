@@ -26,5 +26,5 @@ export default function (fastify, _opts, next) {
  */
 export const checkRedirectUrl = (url: string | undefined): string => {
   if (!url) return process.env.DEFAULT_REIRECT_URI
-  return url
+  return url;
 }

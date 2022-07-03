@@ -22,7 +22,6 @@ export default function (fastify, _opts, next) {
 
     });
 
-
     /*
      * /callback
      * Process data from twitter
