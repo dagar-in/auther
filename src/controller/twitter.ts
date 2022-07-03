@@ -33,26 +33,7 @@ export default function (fastify, _opts, next) {
                 return '/twitter/login';
             if (!request.query['state'])
                 return '/';
-            const access_token = await twitterFetchState(request.query['code'].toString());
-
-            const twitterUser = await twitterFetchUser(access_token);
-            console.log(twitterUser.id);
-
-            const user_instance = await dataFetchUser('twitter', twitterUser.id.toString(), () => User.create(
-                {
-                    username: twitterUser.name || '',
-                    avatar: twitterUser.picture || '',
-                    bio: ''
-                }
-            ))
-
-            return BuildUrl(
-                await getRedirectCode(request.query['state'].toString() || ''), {
-                queryParams: {
-                    'token': authCreateJWT(user_instance)
-                }
-            }
-            );
+          
 
         })());
     });
